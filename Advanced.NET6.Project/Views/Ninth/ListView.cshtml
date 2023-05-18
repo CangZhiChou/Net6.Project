@@ -1,0 +1,85 @@
+﻿@{
+    ViewData["Title"] = "ListView";
+}
+@using Advanced.NET6.Framework.RazorExtension
+@using Advanced.NET6.EFCore.DB.Models
+@model PagingData<Commodity>
+
+@using (Html.BeginForm("ListView", "Ninth", FormMethod.Get, new { @class = "row g-3" }))
+{
+    <p></p>
+    <div class="mb-3 row">
+        <label class="col-sm-1 col-form-label">关键字</label>
+        <div class="col-sm-2">
+            @Html.TextBox("searchString", @Model.SearchString, new { @class = "form-control" , @placeholder="关键字" })
+        </div>
+        <div class="col-sm-1">
+            <button type="submit" class="btn btn-primary mb-3">查询</button>
+        </div>
+        <div class="col-sm-2">
+            @Html.ActionLink("创建Commodity", "Create")
+        </div>
+    </div>
+    <div id="partialajaxlist" style="width:100%">
+        @await Html.PartialAsync("PartialComdityList", Model.DataList)
+        <Paging total="@Model.RecordCount"
+            page-index="@Model.PageIndex"
+            page-size="@Model.PageSize"
+            route-url="/ninth/ListView/PagingView"
+            query="SearchString=@Model.SearchString&url=@ViewBag.Url">
+        </Paging>
+    </div>
+}
+
+
+@section scripts{
+<script type="text/javascript">
+
+    function ajaxDelete(obj) {
+        debugger;
+
+        if (confirm("真的要是删除？")) {
+            $.ajax({
+                type: "Get",
+                url: '/ninth/AjaxDelete',
+                data: { id: obj.id },
+                success: function (data) {
+                    if (data.result == 1) {
+                        alert("删除成功" + obj.id + " 需要手动刷新界面");
+                        location.href = "/ninth/ListView";
+                    }
+                    else{
+                        alert("删除失败了");
+                    }
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    alert(errorThrown);
+                }
+            });
+        }
+    }
+</script>
+     }
+
+
+
+@*<ul class="pagination">
+    <li class="page-item">
+    <a class="page-link" href="#">Previous</a>
+    </li>
+    <li class="page-item">
+    <a class="page-link" href="#">1</a>
+    </li>
+    <li class="page-item">
+    <a class="page-link" href="#">2</a>
+    </li>
+    <li class="page-item">
+    <a class="page-link" href="#">3</a>
+    </li>
+    <li class="page-item">
+    <a class="page-link" href="#">Next</a>
+    </li>
+    </ul>*@
+
+
+

@@ -1,0 +1,79 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Advanced.NET6.Project", "Advanced.NET6.Project\Advanced.NET6.Project.csproj", "{7DEC6AA2-A102-4B42-9405-A01306031334}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Advanced.NET6.ExceptionService", "Advanced.NET6.ExceptionService\Advanced.NET6.ExceptionService.csproj", "{833FCAE5-BCD6-4FA5-B3AD-8A8EBC421D87}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Advanced.NET6.Business.Interfaces", "Advanced.NET6.Business.Interfaces\Advanced.NET6.Business.Interfaces.csproj", "{56C804CC-4A9D-4AF7-8F87-DEA1F66987BB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Advanced.NET6.Business.Services", "Advanced.NET6.Business.Services\Advanced.NET6.Business.Services.csproj", "{A06157D1-BF8E-4E04-B3DF-BA53EB38AEE4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Advanced.NET6.DemoTest", "Advanced.NET6.DemoTest\Advanced.NET6.DemoTest.csproj", "{137309F6-C7DE-4608-84E8-B778971C37EC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Advanced.NET6.Framework", "Advanced.NET6.Framework\Advanced.NET6.Framework.csproj", "{398829CF-F57D-4658-83DE-48D401D25CB1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Advanced.NET6.MinimalApi", "Advanced.NET6.MinimalApi\Advanced.NET6.MinimalApi.csproj", "{2EC9EED3-7DFD-45AD-8328-B27206A0D005}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Advanced.NET6.WebApi", "Advanced.NET6.WebApi\Advanced.NET6.WebApi.csproj", "{83D88E41-144C-43D0-85E9-49DC5E6C3D4A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Advanced.NET6.Jwt.AuthenticationCenter", "Advanced.NET6.Jwt.AuthenticationCenter\Advanced.NET6.Jwt.AuthenticationCenter.csproj", "{5A0F426F-B008-4BFF-BFB1-20D26EA4E140}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Advanced.NET6.EFCore.DB", "Advanced.NET6.EFCore.DB\Advanced.NET6.EFCore.DB.csproj", "{CC2CFD9C-501E-4B24-8B23-C2DA2513888F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7DEC6AA2-A102-4B42-9405-A01306031334}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DEC6AA2-A102-4B42-9405-A01306031334}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DEC6AA2-A102-4B42-9405-A01306031334}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DEC6AA2-A102-4B42-9405-A01306031334}.Release|Any CPU.Build.0 = Release|Any CPU
+		{833FCAE5-BCD6-4FA5-B3AD-8A8EBC421D87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{833FCAE5-BCD6-4FA5-B3AD-8A8EBC421D87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{833FCAE5-BCD6-4FA5-B3AD-8A8EBC421D87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{833FCAE5-BCD6-4FA5-B3AD-8A8EBC421D87}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56C804CC-4A9D-4AF7-8F87-DEA1F66987BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56C804CC-4A9D-4AF7-8F87-DEA1F66987BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56C804CC-4A9D-4AF7-8F87-DEA1F66987BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56C804CC-4A9D-4AF7-8F87-DEA1F66987BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A06157D1-BF8E-4E04-B3DF-BA53EB38AEE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A06157D1-BF8E-4E04-B3DF-BA53EB38AEE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A06157D1-BF8E-4E04-B3DF-BA53EB38AEE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A06157D1-BF8E-4E04-B3DF-BA53EB38AEE4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{137309F6-C7DE-4608-84E8-B778971C37EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{137309F6-C7DE-4608-84E8-B778971C37EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{137309F6-C7DE-4608-84E8-B778971C37EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{137309F6-C7DE-4608-84E8-B778971C37EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{398829CF-F57D-4658-83DE-48D401D25CB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{398829CF-F57D-4658-83DE-48D401D25CB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{398829CF-F57D-4658-83DE-48D401D25CB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{398829CF-F57D-4658-83DE-48D401D25CB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2EC9EED3-7DFD-45AD-8328-B27206A0D005}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EC9EED3-7DFD-45AD-8328-B27206A0D005}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EC9EED3-7DFD-45AD-8328-B27206A0D005}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EC9EED3-7DFD-45AD-8328-B27206A0D005}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83D88E41-144C-43D0-85E9-49DC5E6C3D4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83D88E41-144C-43D0-85E9-49DC5E6C3D4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83D88E41-144C-43D0-85E9-49DC5E6C3D4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83D88E41-144C-43D0-85E9-49DC5E6C3D4A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A0F426F-B008-4BFF-BFB1-20D26EA4E140}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A0F426F-B008-4BFF-BFB1-20D26EA4E140}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A0F426F-B008-4BFF-BFB1-20D26EA4E140}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A0F426F-B008-4BFF-BFB1-20D26EA4E140}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC2CFD9C-501E-4B24-8B23-C2DA2513888F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC2CFD9C-501E-4B24-8B23-C2DA2513888F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC2CFD9C-501E-4B24-8B23-C2DA2513888F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC2CFD9C-501E-4B24-8B23-C2DA2513888F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {32143D00-5925-41B5-B7CA-3270307F056B}
+	EndGlobalSection
+EndGlobal

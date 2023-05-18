@@ -1,0 +1,39 @@
+﻿@using Advanced.NET6.EFCore.DB.Models
+@model List<Commodity>
+<table class="table">
+    <tr>
+        <th>Id</th>
+        <th>标题</th>
+        <th>@Html.ActionLink("价格", "Index", new { orderBy = ViewBag.OrderBy, searchString = ViewBag.SearchString, page = 1 })</th>
+        <th>Url</th>
+        <th>图片</th>
+        <th>Action</th>
+    </tr>
+    @*前后混编，前后分离 MVVM vue *@
+    @foreach (Commodity item in Model)
+    {
+        <tr>
+            <td> 
+                @Html.DisplayFor(modelItem => item.Id)@*//强类型 可以展示display*@
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Url)
+            </td>
+            <td>
+                <img src="@item.ImageUrl" width="40px" />
+            </td>
+            <td>
+                <a href="/Ninth/Details/@item.Id">详情</a>|
+                @Html.ActionLink("编辑", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("删除", "Delete", new { id = item.Id }) |
+                <a id="@item.Id" href="javascript:void(0);" onclick="ajaxDelete(this)">ajax删除</a>
+            </td>
+        </tr>
+    }
+</table>

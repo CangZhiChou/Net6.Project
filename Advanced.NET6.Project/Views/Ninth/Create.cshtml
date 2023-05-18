@@ -1,0 +1,70 @@
+﻿
+@{
+    ViewData["Title"] = "Create";
+}
+
+<style>
+    .field-validation-error {
+        color: red !important;
+    }
+</style>
+<h1>添加商品数据</h1> 
+@using Advanced.NET6.EFCore.DB.Models
+@model Commodity
+@{ 
+    List<SelectListItem> CategoryList = ViewBag.categoryList as List<SelectListItem>;
+} 
+@using (Html.BeginForm("Create", "Ninth", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    <div class="form-horizontal">
+        <hr />
+        @Html.HiddenFor(model=>model.Id);
+        @Html.ValidationSummary(true)  @*//验证提交给后台的手，关于提价的时候，是否是唯一的提交*@
+        <div class="form-group form-row">
+            @Html.LabelFor(model => model.CategoryId, new { @class = "col-sm-1 control-label" })
+            <div class="col-sm-8">
+                @Html.DropDownListFor(model => model.CategoryId, CategoryList, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.CategoryId)   @*//错误消息 针对于实体验证中--验证失败后，限时的数据*@
+            </div>
+        </div>
+        <div class="form-group form-row">
+            @Html.LabelFor(model => model.Title, new { @class = "col-sm-1 control-label" })
+            <div class="col-sm-8">
+                @Html.TextBoxFor(model => model.Title, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Title)
+            </div>
+        </div>
+        <div class="form-group form-row">
+            @Html.LabelFor(model => model.Price, new { @class = "col-sm-1 control-label" })
+            <div class="col-sm-8">
+                @Html.TextBoxFor(model => model.Price, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Price)
+            </div>
+        </div>
+        <div class="form-group form-row">
+            @Html.LabelFor(model => model.ImageUrl, new { @class = "col-sm-1 control-label" })
+            <div class="col-sm-8">
+                @Html.TextBoxFor(model => model.ImageUrl, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.ImageUrl)
+            </div>
+        </div>
+        <div class="form-group form-row">
+            @Html.LabelFor(model => model.Url, new { @class = "col-sm-1 control-label" })
+            <div class="col-sm-8">
+                @Html.TextBoxFor(model => model.Url, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Url)
+            </div>
+        </div>
+        <div class="form-group form-row">
+            <div class="col-md-offset-2 col-md-8">
+                <input type="submit" value="Submit" class="btn btn-primary">
+                @Html.ValidationMessage("unableToSave")
+            </div>
+        </div>
+    </div>
+}
+<div>
+    @Html.ActionLink("Back to List", "ListView")
+</div>
+

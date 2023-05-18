@@ -1,0 +1,180 @@
+﻿@using Advanced.NET6.Framework.RazorExtension
+@{
+    ViewData["Title"] = "RazorExtension";
+}
+
+
+
+@Html.Br()
+@*<br /> 换行*@
+@Html.ActionLink("LinkText", "RazorShow")
+
+@Html.Br()
+@Html.ActionLink("带控制器", "ActionName", "ControllerName")
+
+@Html.Br()
+@Html.ActionLink("带路由信息", "ActionName", new { id = 1, name = 3, age = 4, height = 5 })
+
+@Html.Br()
+<a href="/Html/ActionName/1?name=3&age=4&height=5">带路由信息</a>
+
+@Html.Br()
+@Html.ActionLink("链接", "action", new { id = 1, name = 3, age = 4, height = 5 }, new { @class = "classText", style = "width:200px", tt = "xxx" })
+
+@Html.Br()
+<a class="classText" href="/Home/Index/@DateTime.Now" style="width:200px" tt="xxx">Home</a>
+
+@Html.Br()
+@Html.RouteLink("LinkText", new { action = "ActionName" })
+
+@Html.Br()
+
+@Html.RouteLink("LinkText", new { action = "ActionName", controller = "ControllerName" })
+
+@Html.RouteLink("LinkText", new { action = "ActionName", id = 1 })
+
+@Html.Br()
+    TextBox:
+@Html.Br()
+@Html.TextBox("NameId")
+
+@Html.Br()
+@Html.TextBox("NameId", "Value")
+
+@Html.Br()
+@Html.TextBox("NameId", "Value", new { @class = "classText", @style = "width:200px", @tt = "xxx" })
+
+@Html.Br()
+@Html.Hidden("NameId")
+
+@Html.Br()
+@Html.Hidden("NameId", "Value")
+
+<br />
+@Html.Br()
+@Html.Password("NameId")
+
+@Html.Br()
+ 
+@Html.Password("NameId", "Value")
+
+@Html.Br()
+@Html.CheckBox("NameId", true)
+
+@Html.Br()
+@Html.CheckBox("NameId", false)
+
+@Html.Br()
+@Html.RadioButton("NameId", "Value", true)
+
+@Html.Br()
+@Html.RadioButton("NameId", "Value", false)
+
+
+@Html.Br()
+list:
+@{
+    SelectListItem item;
+    List<SelectListItem> list = new List<SelectListItem>();
+    for (int i = 1; i < 5; i++)
+    {
+        item = new SelectListItem();
+        item.Text = "Text" + i;
+        item.Value = "Value" + i;
+        item.Selected = (i == 2);
+        list.Add(item);
+    }
+}
+@Html.Br()
+@Html.DropDownList("NameId", list)
+@Html.Br()
+@Html.Br()
+@Html.Br()
+
+@{
+    SelectListItem item1;
+    List<SelectListItem> list1 = new List<SelectListItem>();
+    for (int i = 1; i < 5; i++)
+    {
+        item1 = new SelectListItem();
+        item1.Text = "Text" + i;
+        item1.Value = "Value" + i;
+        item1.Selected = (i == 2);
+        list1.Add(item1);
+    }
+}
+@Html.Br()
+@Html.DropDownList("NameId", list1)
+
+@Html.Br()
+@Html.Br()
+@Html.Br()
+@Html.ListBox("NameId", list)
+
+
+@Html.Br()
+@Html.Br()
+@Html.Br()
+
+表单：
+@using (Html.BeginForm("PostData", "Html", FormMethod.Get))
+{
+    @Html.Br()
+    ;
+    @Html.TextBox("UserNameGet")
+    @Html.Br()
+    ;
+    @Html.Password("PasswordGet")
+    @Html.Br()
+    ;
+    <input type="submit" value="SubmitButton" />
+}
+
+
+@Html.Br()
+@Html.Br()
+@Html.Br()
+
+
+表单：
+@{
+    Html.BeginForm("PostData", "Html", FormMethod.Post);
+}
+@Html.Br()
+@Html.TextBox("UserNamePost")
+@Html.Br()
+@Html.Password("PasswordPost")
+@Html.Br()
+<input type="submit" value="SubmitButton" />
+@{
+    Html.EndForm();
+}
+
+@Html.Br()
+@Html.Br()
+@Html.Br()
+
+IHtmlHelper:IHtmlHelper扩展
+<Hello></Hello>
+
+@Html.Br()
+    TagBuilder:扩展
+<divInfo theme="primary">
+    <button type="submit">Add</button>
+    <button type="reset">Reset</button>
+    <a href="/Home/Index">Cancel</a>
+</divInfo>
+
+@Html.Br()
+@Html.Br()
+
+<p>Html.Action 返回的是字符串，放入当前位置,需要经过action的处理</p>
+
+<a href="zhaoxiedu.net">朝夕官网1</a>
+@Html.RouteLink("LinkText", new { action = "HtmlTargetElement", controller = "Eleventh" })
+
+
+
+
+
+

@@ -1,0 +1,13 @@
+﻿@model ErrorViewModel
+@{ 
+    Exception exception= ViewData["Exception"] as Exception;
+}
+
+<h1 class="text-danger">Error.</h1>
+@if (exception != null)
+{      
+    <h3 class="text-danger">@exception.Message</h3>
+}
+
+
+ 

@@ -1,0 +1,212 @@
+﻿
+@using Advanced.NET6.Project.Views.Ninth;
+ 
+
+
+@{
+    ViewData["Title"] = "Index";
+}
+ 
+
+@using System.Reflection;
+@using Advanced.NET6.Project.Views.Ninth;
+
+
+@implements CustomInterface
+@*实现接口中的方法*@
+@functions	{
+
+    public string GetHello()
+    { 
+        return "functions----Hello";
+    }
+
+    public void Show()
+    { 
+    
+    }
+
+}
+
+  
+<br />
+@*添加特性*@
+@attribute [CustomRichardAttribute]
+@{
+    CustomRichardAttribute attribute = this.GetType().GetCustomAttribute<CustomRichardAttribute>();
+
+    if (attribute != null)
+    {
+        <h3>能找到CustomRichardAttribute 特性</h3>
+    }
+    else
+    {
+        <h3>找不到</h3>
+    }
+
+}
+
+@model object
+@*单行*@  <!--单行-->
+
+@{int i = 3; <a> </a> int m = 4;}
+
+@{
+    //多行
+    ViewBag.Title = "this is Fourth Page";
+    int k = 5;
+}
+@{
+    <h1>@k</h1>
+}
+
+@*行内不能有大括号*@
+<h3>行内：@ViewBag.Title</h3>
+@*<h3>行内：@{ViewBag.Title}</h3>*@
+
+@*1.隐式 Razor 表达式---中间不能使用空格   不支持泛型*@
+<p>@DateTime.Now </p>
+<p>@DateTime.IsLeapYear(2016) </p>
+
+
+@*显式 Razor 表达式*@
+<br />
+<p>显式 Razor 表达式: @(DateTime.Now - TimeSpan.FromDays(7))</p>
+@{
+    int index = 123;
+}
+@index
+@("<span>Hello World</span>")
+
+
+<br />
+@*代码块*@
+@{
+    var quote = "The future depends on what you do today. - Mahatma Gandhi";
+}
+<p>@quote</p>
+@{
+    quote = "Hate cannot drive out hate, only love can do that. - Martin Luther King, Jr.";
+}
+<p>@quote</p>
+
+<br />
+
+@*在代码块中，使用标记将本地函数声明为用作模板化方法：*@
+@{
+    void RenderName(string name)
+    {
+        <p>Name: <strong>@name</strong></p>
+    }
+
+    RenderName("模板化方法:Mahatma Gandhi");
+    RenderName("模板化方法:Martin Luther King, Jr.");
+}
+
+@*带分隔符的显式转换*@
+@{
+    var people = "朝夕教育";
+}
+
+ 
+@for (var x = 0; x < people.Length; x++)
+{
+    var person = people[x];
+    <text>Name: @person</text>
+}
+
+<br />
+@*显示行转换*@
+@for (var j = 0; j < people.Length; j++)
+{
+    var person = people[j];
+    @:Name: @person
+}
+
+
+<br />
+@*if*@
+@if (i > 2)
+{
+    int x = 345;
+    <a href="www.baidu.com">这里是个链接</a>
+}
+
+@for (int l = 0; l < 10; l++)
+{
+    <br>
+    if (l == 0)
+    {
+        <a href="www.baidu.com">这里是百度链接 @l</a>
+    }
+    else if (l == 2)
+    {
+        <a href="http://www.zhaoxiedu.net/">这里是朝夕官网链接 @l</a>
+    }
+    else
+    {
+        <a href="http://www.zhaoxiedu.net/">这里是朝夕官网链接 @l</a>
+    }
+    <br>
+}
+
+@for (int l = 0; l < 5; l++)
+{
+    switch (l)
+    {
+        case 1:
+            <a href="http://www.zhaoxiedu.net/">这里是朝夕官网链接 @l</a>
+            break;
+        case 2:
+            <a href="http://www.zhaoxiedu.net/">这里是朝夕官网链接 @l</a>
+            break;
+        case 3:
+            <a href="http://www.zhaoxiedu.net/">这里是朝夕官网链接 @l</a>
+            break;
+        case 4:
+            <a href="http://www.zhaoxiedu.net/">这里是朝夕官网链接 @l</a>
+            break;
+        case 5:
+            <a href="http://www.zhaoxiedu.net/">这里是朝夕官网链接 @l</a>
+            break;
+        default:
+            break;
+    }
+    <br>
+}
+
+
+@{
+    //多行
+    ViewBag.Title = "Index";
+
+    //闭合的html标签
+    <p>闭合的html标签</p>
+
+    @:这里没有闭合标签---当成一段字符串输出
+
+    <text>
+        在这里，随便写html
+        <a href="http://www.zhaoxiedu.net/#/Home">这里是朝夕教育官网</a>
+    </text>
+}
+
+<!--使用partial页--局部视图-->
+
+<p>等于webform的ascx</p>
+
+<p>Html.RenderPartialAsync 在指定位置添加一个view，返回void 需要放入大括号 </p>
+@Html.RenderPartialAsync("PartialPage", "这里是Html.RenderPartial");
+<br />
+<p>Html.PartialAsync 返回的是字符串，放入当前位置</p>
+@await Html.PartialAsync("PartialPageNew", "这里是Html.Partial")    @*asp.net mvc中有支持Partial去请求后台的局部是*@
+
+<!--使用Action页-->
+<br />
+<p>Html.Action 返回的是字符串，放入当前位置,需要经过action的处理</p>
+
+ 
+
+
+
+
